@@ -12,7 +12,7 @@ Java 1.8 or more and maven
  
 ### Running Application
 
-Go to BeverageApp.java in package "com.coditas.app", there will be a String order,
+Go to BeverageApp.java in package "com.coditas.test", there will be a String order,
 copy your order in this and run the program as Java application.
 
 

@@ -1,4 +1,4 @@
-package com.coditas.app;
+package com.coditas.test.bootstrap;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -10,7 +10,6 @@ public class DataLoader {
     private static final String SUGAR = "sugar";
     private static final String WATER = "water";
 
-
     private DataLoader() {
 
     }
@@ -21,12 +20,10 @@ public class DataLoader {
         beveragesMap.put("coffee", Arrays.asList("milk", SUGAR, WATER));
         beveragesMap.put("chai", Arrays.asList("milk", SUGAR, WATER));
         beveragesMap.put("banana smoothie", Arrays.asList("milk", SUGAR, WATER));
-        beveragesMap.put("strawberry shake", Arrays.asList(WATER, "milk", WATER));
+        beveragesMap.put("strawberry shake", Arrays.asList(WATER, "milk", SUGAR));
         beveragesMap.put("mojito", Arrays.asList(SUGAR, WATER, "soda", "mint"));
-
         return beveragesMap;
     }
-
 
     public static Map<String, Double> getItemRates() {
         Map<String, Double> itemRates;
@@ -38,7 +35,6 @@ public class DataLoader {
         itemRates.put("mojito", 7.5d);
         return itemRates;
     }
-
 
     public static Map<String, Double> getIngredientRates() {
         Map<String, Double> ingredientRates;

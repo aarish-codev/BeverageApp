@@ -1,6 +1,7 @@
-package com.coditas.app;
+package com.coditas.test;
 
 
+import com.coditas.test.factory.BeverageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +17,7 @@ public class BeverageApp {
         String order = "Chai, -milk, -water, Coffee, Mojito";
 
         final double cost = factory.getInvoiceFromOrder(order);
+
         LOGGER.info("Your total cost is ${}", cost);
 
     }

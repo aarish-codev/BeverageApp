@@ -1,8 +1,8 @@
-package appTest;
+package com.coditas.test;
 
-import com.coditas.app.BeverageFactory;
-import com.coditas.app.BeverageTypoException;
-import com.coditas.app.InvalidOrderException;
+import com.coditas.test.factory.BeverageFactory;
+import com.coditas.test.exception.BeverageTypoException;
+import com.coditas.test.exception.InvalidOrderException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -43,5 +43,11 @@ public class BeverageAppTest {
         Assert.assertEquals(0.0d, factory.getInvoiceFromOrder(order), 0.0d);
     }
 
+
+    @Test(expected = BeverageTypoException.class)
+    public void testOrderWithInvalidOrder() {
+        String order = "paani,tee";
+        Assert.assertEquals(0.0d, factory.getInvoiceFromOrder(order), 0.0d);
+    }
 
 }
