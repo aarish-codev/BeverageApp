@@ -16,7 +16,7 @@ public class BeverageApp {
         String order = "Chai, -milk, -water, Coffee, Mojito";
 
         final double cost = factory.getInvoiceFromOrder(order);
-        LOGGER.info("Your total cost is ${ }", cost);
+        LOGGER.info("Your total cost is ${}", cost);
 
     }
 
