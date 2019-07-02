@@ -2,6 +2,7 @@ package com.coditas.test.factory;
 
 import com.coditas.test.exception.BeverageTypoException;
 import com.coditas.test.bootstrap.DataLoader;
+import com.coditas.test.exception.IllegalIngredientsException;
 import com.coditas.test.exception.InvalidOrderException;
 
 import java.util.Arrays;
@@ -71,6 +72,14 @@ public class BeverageFactory {
         Double itemValue = itemRates.get(itemWithIngredients.get(0));
         Double ingredientsValue = 0.0d;
         // check to ensure items are there in list
+        List<String> ingredients = itemWithIngredients.subList(1, itemWithIngredients.size());
+        List<String> allIngredients = beveragesMap.get(itemWithIngredients.get(0));
+
+        // it checks if an invalid ingredient is passed to the order
+        boolean validIngredients = ingredients.stream().allMatch(t -> allIngredients.stream().anyMatch(t::contains));
+        if (!validIngredients)
+            throw new IllegalIngredientsException("Invalid ingredient in order");
+
         if (itemWithIngredients.size() > 1)
             for (int i = 1; i < itemWithIngredients.size(); i++) {
                 ingredientsValue = ingredientsValue + ingredientRates.get(itemWithIngredients.get(i));
