@@ -17,12 +17,12 @@ copy your order in this and run the program as Java application.
 
 
 # Note
-There should be exactly one space before the excluded item
+There should be exactly one space before the excluded item<br />
 Eg --> "Chai, -milk, -sugar" is valid 
         whereas "Chai,-milk,  -sugar" is invalid
 ### Running Test cases
 
-Go to BeverageAppTest in package "appTest" and run by right click and Run'All Test' or Ctrl+Shift+F10(in IntelliJ)
+Go to BeverageAppTest in package "com.coditas.test" and run by right click and Run'All Test' or Ctrl+Shift+F10(in IntelliJ)
 
 ## Example Input
 "Chai, -milk, -water, Coffee, Mojito"
