@@ -20,7 +20,7 @@ public class DataLoader {
     private static final String SODA = "soda";
     private static final String MINT = "mint";
 
-    // String constants for base ingredients
+    // Price constants for base ingredients
     private static final Double STRAWBERRIES_PRICE = 5.0d;
     private static final Double BANANA_PRICE = 4.0d;
     private static final Double TEA_LEAVES_PRICE = 2.0d;
