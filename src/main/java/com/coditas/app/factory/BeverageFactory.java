@@ -1,9 +1,9 @@
-package com.coditas.test.factory;
+package com.coditas.app.factory;
 
-import com.coditas.test.exception.BeverageTypoException;
-import com.coditas.test.bootstrap.DataLoader;
-import com.coditas.test.exception.IllegalIngredientsException;
-import com.coditas.test.exception.InvalidOrderException;
+import com.coditas.app.exception.BeverageTypoException;
+import com.coditas.app.bootstrap.DataLoader;
+import com.coditas.app.exception.IllegalIngredientsException;
+import com.coditas.app.exception.InvalidOrderException;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,9 +1,9 @@
 package com.coditas.test;
 
-import com.coditas.test.exception.IllegalIngredientsException;
-import com.coditas.test.factory.BeverageFactory;
-import com.coditas.test.exception.BeverageTypoException;
-import com.coditas.test.exception.InvalidOrderException;
+import com.coditas.app.exception.IllegalIngredientsException;
+import com.coditas.app.factory.BeverageFactory;
+import com.coditas.app.exception.BeverageTypoException;
+import com.coditas.app.exception.InvalidOrderException;
 import org.junit.Assert;
 import org.junit.Test;
 

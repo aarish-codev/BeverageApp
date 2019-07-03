@@ -1,4 +1,4 @@
-package com.coditas.test.exception;
+package com.coditas.app.exception;
 
 public class IllegalIngredientsException extends RuntimeException {
 

@@ -1,7 +1,7 @@
-package com.coditas.test;
+package com.coditas.app;
 
 
-import com.coditas.test.factory.BeverageFactory;
+import com.coditas.app.factory.BeverageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
