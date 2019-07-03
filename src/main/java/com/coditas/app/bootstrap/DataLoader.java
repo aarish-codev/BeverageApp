@@ -6,12 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 public class DataLoader {
-
+    // String constants for shop items
     private static final String CHAI = "chai";
     private static final String BANANA_SMOOTHIE = "banana smoothie";
     private static final String STRAWBERRY_SHAKE = "strawberry shake";
     private static final String MOJITO = "mojito";
 
+    // String constants for ingredients
     private static final String SUGAR = "water";
     private static final String WATER = "water";
     private static final String COFFEE = "coffee";
@@ -19,6 +20,7 @@ public class DataLoader {
     private static final String SODA = "soda";
     private static final String MINT = "mint";
 
+    // String constants for base ingredients
     private static final Double STRAWBERRIES_PRICE = 5.0d;
     private static final Double BANANA_PRICE = 4.0d;
     private static final Double TEA_LEAVES_PRICE = 2.0d;
