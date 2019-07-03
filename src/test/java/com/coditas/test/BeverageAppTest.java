@@ -27,8 +27,8 @@ public class BeverageAppTest {
 
     @Test()
     public void testForNormalOrder2() {
-        String order = "Chai, -milk, -water, Mojito, Banana Smoothie, Strawberry Shake";
-        Assert.assertEquals(23d, factory.getInvoiceFromOrder(order), 0.0d);
+        String order = "Chai, -milk, -water, Mojito, -mint, Banana Smoothie, Strawberry Shake";
+        Assert.assertEquals(22.5d, factory.getInvoiceFromOrder(order), 0.0d);
     }
 
 

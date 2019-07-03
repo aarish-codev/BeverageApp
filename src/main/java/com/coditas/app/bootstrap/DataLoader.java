@@ -13,7 +13,7 @@ public class DataLoader {
     private static final String MOJITO = "mojito";
 
     // String constants for ingredients
-    private static final String SUGAR = "water";
+    private static final String SUGAR = "sugar";
     private static final String WATER = "water";
     private static final String COFFEE = "coffee";
     private static final String MILK = "milk";
