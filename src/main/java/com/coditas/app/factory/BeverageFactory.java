@@ -5,21 +5,19 @@ import com.coditas.app.bootstrap.DataLoader;
 import com.coditas.app.exception.IllegalIngredientsException;
 import com.coditas.app.exception.InvalidOrderException;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class BeverageFactory {
 
-    //  This stores the combination of Items with allowed exclusions
+    //      This stores the combination of Items with allowed exclusions
     Map<String, List<String>> beveragesMap = DataLoader.getBeveragesMap();
-    //  This stores the price of Items
+    //      This stores the price of Items
     Map<String, Double> itemRates = DataLoader.getItemRates();
-    //  This stores the price of exclusions
+    //      This stores the price of exclusions
     Map<String, Double> ingredientRates = DataLoader.getIngredientRates();
 
-    // get cost of each item in order and total them
+    //      get cost of each item in order and total them
     public double getInvoiceFromOrder(String order) {
         Double cost = 0.0d;
         List<String> orderItems = getItemsFromOrder(order.trim());
@@ -36,21 +34,21 @@ public class BeverageFactory {
 
     }
 
-    // this returns a List which has order with exclusions at each index, all in Lower cases
-    // Chai, -milk, -water, Mojito, Coffee, -milk, -sugar will have
-    //        Chai, -milk, -water
-    //        Mojito
-    //        Coffee, -milk, -sugar
+    //     this returns a List which has order with exclusions at each index, all in Lower cases
+//     Chai, -milk, -water, Mojito, Coffee, -milk, -sugar will have
+//     Chai, -milk, -water
+//     Mojito
+//     Coffee, -milk, -sugar
     public List<String> getItemsFromOrder(String order1) {
-        return Arrays.stream(order1.split("(?!, -),")).map(String::trim).map(String::toLowerCase).collect(Collectors.toList());
+        return Arrays.stream(order1.split("(?!,\\s*-),")).map(String::trim).map(String::toLowerCase).collect(Collectors.toList());
     }
 
-    // Similar to getItemsFromOrder(), but this replaces '-' from the order
+    //     Similar to getItemsFromOrder(), but this replaces '-' from the order
     public List<String> getIngredientFromItem(String item) {
         return Arrays.stream(item.split(",")).map(s -> s.replace("-", "")).map(String::trim).collect(Collectors.toList());
     }
 
-    // if ordered item not present in DataLoader or empty order returns false
+    //     if ordered item not present in DataLoader or empty order returns false
     public boolean checkIfValidOrder(String item) {
         List<String> itemIngredients = getIngredientFromItem(item);
         // case: When typo in order
@@ -67,7 +65,7 @@ public class BeverageFactory {
     }
 
 
-    // get Item and exclusion prices from DataLoader and return cost for each item in order
+    //     get Item and exclusion prices from DataLoader and return cost for each item in order
     public Double calculateInvoice(List<String> itemWithIngredients) {
         Double itemValue = itemRates.get(itemWithIngredients.get(0));
         Double ingredientsValue = 0.0d;
