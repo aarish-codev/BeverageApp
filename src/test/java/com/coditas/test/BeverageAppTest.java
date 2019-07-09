@@ -1,8 +1,8 @@
 package com.coditas.test;
 
+import com.coditas.app.exception.DuplicateIngredientException;
 import com.coditas.app.exception.IllegalIngredientsException;
 import com.coditas.app.factory.BeverageFactory;
-import com.coditas.app.exception.BeverageTypoException;
 import com.coditas.app.exception.InvalidOrderException;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,8 +13,7 @@ public class BeverageAppTest {
 
     BeverageFactory factory = new BeverageFactory();
 
-
-    @Test(expected = BeverageTypoException.class)
+    @Test(expected = InvalidOrderException.class)
     public void testForBlankOrder() {
         String order = "";
         Assert.assertEquals(0.0d, factory.getInvoiceFromOrder(order), 0.0d);
@@ -45,10 +44,17 @@ public class BeverageAppTest {
     }
 
 
-    @Test(expected = BeverageTypoException.class)
+    @Test(expected = InvalidOrderException.class)
     public void testOrderWithInvalidOrder() {
         String order = "paani,tee";
         Assert.assertEquals(0.0d, factory.getInvoiceFromOrder(order), 0.0d);
+    }
+
+    @Test(expected = DuplicateIngredientException.class)
+    public void testOrderWithDuplicateIngredients() {
+        String order = "Chai,  -water,-water, Coffee, Mojito";
+        Assert.assertEquals(0.0d, factory.getInvoiceFromOrder(order), 0.0d);
+
     }
 
     @Test(expected = IllegalIngredientsException.class)

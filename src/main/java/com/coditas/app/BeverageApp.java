@@ -14,7 +14,7 @@ public class BeverageApp {
         BeverageFactory factory = new BeverageFactory();
 
 //        Modify the below string and run the program to calculate your order cost
-        String order = "Chai, -milk, -water, Coffee, Mojito";
+        String order = " ,-milk, -water,  Coffee, Mojito";
 
         final double cost = factory.getInvoiceFromOrder(order);
 
